@@ -1,0 +1,9 @@
+//Медиа правила при ширине экрана менее 900px
+@media screen and (max-width: 900px){
+    del_steps{
+        // Сокращаем паддинги для экономии места
+        & > div{
+            padding: 16px 8px 16px 8px;
+        }
+    }
+}

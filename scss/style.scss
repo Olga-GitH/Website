@@ -1,0 +1,47 @@
+/*Подключение шрифтов из папки fonts*/
+@import url("../fonts/Inter/Inter.css");
+/*По аналогии можно подключить и другие шрифты*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font: 400 24px "inter", sans-serif;
+}
+
+header, footer{
+    background-color: #222;
+    min-height: 100px;
+    padding-bottom: 5px;
+}
+
+main{
+    padding-top: 35px;
+    background-color: #000;
+    min-height: 100px;
+    padding-bottom: 20px;
+}
+
+.content{
+    max-width: 900px;
+    margin: 0 auto;
+}
+/*все блоки-карточки на расстоянии 30px в main*/
+main .content > div{
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 855px){
+    // Уменьшаем область контента
+    .content{ max-width: 400px;}
+    header{ min-height: 86px;}
+}
+
+@import "./header";
+@import "./main";
+@import "./footer";
+@import "./mobile";

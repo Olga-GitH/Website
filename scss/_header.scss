@@ -1,0 +1,168 @@
+/*------------------ ЗАГОЛОВОК -------------------*/
+nav{
+    display: grid;
+    grid-template-areas: 
+    "logr name name name name search"
+    "logo name name name name login"
+    "logo hnav hnav hnav hnav hnav";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: 22px;
+    position: relative;
+    overflow: hidden;
+    &:hover{.nav_item_5{font-weight: normal;}}
+
+    [class ^= "nav_item_"]:hover{
+        font-weight: bold;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        padding: 10px; 
+    }
+    .nav_toggle{
+        display: none;
+    }
+    .nav_label{
+        grid-area: logo;
+        align-items: end;
+        padding-right: 5px;
+    }
+    .nav_burger{
+        margin-right: 10px;
+    }
+    .nav_item_1{
+        &:hover{cursor: pointer;}
+    }
+    .nav_item_5{ 
+        font-weight: bold;}
+    .hidd_nav{
+        grid-area: hnav;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-right: 60px;
+        margin-left: 20px;
+    }
+    .nav_item_7{
+        grid-area: name;
+        font-size: 40px;
+        color: #E30E6A;
+        font-weight: 700;
+    }
+    .nav_item_8{
+        grid-area: search;
+        font-size: 18px;
+        position: relative;
+        //Значок поиска
+        &::before{
+            content: "";
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -25px;
+            background-image: url("../images/nav_search.png"); 
+        }
+    }
+    .nav_item_9{
+        grid-area: login;
+        font-size: 18px;
+        position: relative;
+        //Значок входа
+        &::before{
+            content: "";
+            width: 25px;
+            height: 18px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -32px;
+            background-image: url("../images/nav_login.png"); 
+        }
+    }
+    
+    
+    
+}
+//-----------------------------------------------
+
+
+
+//!---------------MEDIA RULES------------------------------------
+@media screen and (max-width: 855px){
+    //  высоту шапки
+    header{ min-height: 87px;}
+    
+    nav{// Блок навигации
+        display: grid;
+        grid-template-areas: "logr namee" "logo namee";
+        grid-template-columns: 1fr 6fr 0;
+        font-size: 22px;
+        position: absolute;
+        align-items: center;
+        overflow: hidden;
+        // Изменение режима по умолч
+        &:hover{.nav_item_5{font-weight: bold;}}
+        //Сдвигаем меню при нажатии
+        .nav_toggle:checked ~ .hidd_nav{
+            left:0%;
+        }
+        .nav_item_1{ // Логотип
+            grid-area: logo;
+            max-width: 79px;
+            height: 86px;
+            z-index: 2;
+            &:hover{
+                cursor: pointer;
+                background-color: #1c1b1b;
+                border-radius: 20px;
+            }
+        }
+        .nav_item_7{ //FLOAP
+            grid-area: namee;
+            margin-left: 0.5rem;
+        }
+        // Выключаем ненужные блоки
+        .nav_item_8, .nav_item_9{
+            display: none;
+        }
+        // Блок с выезжающей навигацией
+        .hidd_nav {
+            position: relative;
+            border-radius: 20px;
+            left: 110%;
+            background-color: #222222da;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: left 0.5s;
+            // Выключаем подсветку выбранной страницы
+            &:hover{
+                .nav_item_5{ font-weight: normal;}
+            }
+            // Делаем надписи жирными при наведении
+            & > *:hover{
+                font-weight: bold !important;
+            }
+            // Небольшая реакция на нажатие
+            & > *:active{
+                color:#E30E6A;
+            }
+            // Поумолчанию выбранная страница - доставка
+            .nav_item_5{  
+                width: 126.5px;
+            }
+        }
+    }
+}
+//--------------------------------------------------------*/
+

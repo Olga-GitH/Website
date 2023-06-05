@@ -1,0 +1,114 @@
+/*-----------------------FOOTER----------------------------*/
+
+footer{
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 190px;
+    color: #F5F5F5;
+}
+
+.footer{  //Элементы подвала
+    &__elem{
+        position: relative;
+        min-height: 108px;
+        letter-spacing: 1px;
+        &__title{  //Заголовоки блоков
+            margin-bottom: 10px;
+        }
+        &__mail{  //Адрес почты
+            font-size: 11px;
+            border: 1px solid #F5F5F5;
+            border-radius: 5px;
+            padding: 2px 4px;
+            position: relative;
+            // Обработка поля ввода почты
+            & > *{
+                border:none;
+                outline: none;
+                background-color: #222;
+                color: white;
+                width: 100%;
+            }
+            //Обработка кнопки после почты
+            &::after{
+                content: "";
+                width: 30px;
+                height: 26px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 50%;
+                right: -35px;
+                transform: translateY(-50%);
+                background-image: url("../images/footer_mail.png");
+                &:hover{
+                    cursor: pointer !important;}
+            }       
+        }
+        &__info:hover{
+            cursor: pointer;
+        }
+        &__politics{ //Политика конфиденциальности
+            padding-top: 3px;
+            width: 180px;
+            font-size: 6px;
+            line-height: 6px;
+            margin-bottom: 40px;
+            &:hover{
+                cursor: pointer;}
+        }
+        &__bott1{  // Нижний адрес
+            font-size: 6px;
+            position: absolute;
+            right: -70px;
+            bottom: -10px;
+        }
+        &__bott2{  //Нижний floap
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            position: absolute;
+            right: -70px;
+            bottom: -25px;
+        }
+        &__logo{  //Нижний logo
+            margin-right: 5px;
+        }
+    }
+}
+
+
+//!---------------MEDIA RULES------------------------------------
+@media screen and (max-width: 700px){
+
+    footer{  //Подвал
+        padding-top: 20px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        align-items: flex-start;
+        height: 270px;
+    }
+
+    .footer{  //Элементы подвала
+        &__elem{
+            &__bott1{  // Нижний адрес
+                line-height: 10px;
+                right: 0;
+            }
+            &__bott2{  //Нижний floap
+                right: 0;
+            }
+            &__mail{  //Рассылка
+                &::after{
+                    right: -1px;
+                }
+            }
+        }
+    }
+}
+
