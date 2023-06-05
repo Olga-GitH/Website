@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>FLOAP</title>
+</head>
+<body>
+
+<!-- Основные разделы страницы-->
+    <header>
+        <div class="content">
+            <!-- Меню-->
+            <nav>
+
+                <!--Checkbox для выезжающего меню при нажатии на лого-->
+                <input class="nav_toggle" type="checkbox" name="" id="toggle">
+                <label class="nav_label" for="toggle">
+                    <img class = "nav_item_1" width="99" height="106" src="./images/logo.png" alt="logo">
+                </label>
+
+                <!--Элементы, которые будут в скрытом меню тоже-->
+                <div class="hidd_nav">
+                    <a class = "nav_item_2" href="#">
+                        <!--<img class = "nav_burger" width="22" height="16" src="./images/nav_burger.png" alt="">-->
+                                                    Главная</a>
+                    <a class = "nav_item_3" href="#">Каталог</a>
+                    <a class = "nav_item_4" href="#">Редактор</a>
+                    <a class = "nav_item_5" href="#">Доставка</a>
+                    <a class = "nav_item_6" href="#">О нас</a>
+                </div>
+
+                <a class = "nav_item_7" href="#">FLOAP</a>
+                <a class = "nav_item_8" href="#">Поиск</a>
+                <a class = "nav_item_9" href="#">Войти</a>
+                
+                
+
+            </nav>
+        </div>
+
+    </header>
+    
+    <main>
+
+        <div class="content">
+            <!-- Карточка 1-->
+            <div class="advantages">
+                <div class="advantages__item_1">Быстрая доставка по всей России</div>
+                <adv_items>
+                    <div class="advantages__item_2">Круглый год</div>
+                    <div class="advantages__item_3">Гарантия качества</div>
+                    <div class="advantages__item_4">Возврат при примерке</div>
+                </adv_items>
+                
+            </div>
+
+            <!-- Карточка 2-->
+            <div class="delivery">
+                <div class="delivery__item_1">Как заказать доставку товара?</div>
+
+                <del_steps>
+
+                    <div class="delivery_step_1">
+                        <img class = "del__png_step_1" width="32" height="32" src="./images/del_step1.png" alt="1">
+                        <div class = "del__step_1">Перейдите на страницу товара и добавьте его в корзину</div>
+                    </div>
+                    <div class="delivery_step_2">
+                        <div class = "del__step_2">Выберите удобный способ доставки и узнайте ее стоимость</div>
+                        <img class = "del__png_step_2" width="32" height="32" src="./images/del_step2.png" alt="2">
+                    </div>
+                    <div class="delivery_step_2_">
+                        <div class = "del__comp_1">Boxberry</div>
+                        <div class = "del__comp_2">CDEK</div>
+                        <div class = "del__comp_3">Почта Росиии</div>
+                    </div>
+                    <div class="delivery_step_3">
+                        <img class = "del__png_step_3" width="32" height="32" src="./images/del_step3.png" alt="3">
+                        <div class = "del__step_3">Оформите заказ. Следите за сроками доставки</div>
+                    </div>
+                    <div class="delivery_step_3_"></div>
+
+                </del_steps>
+            </div>
+
+            <!-- Карточка 3-->
+            <div class="pickup_title">
+                <div class="delivery__item_1">Пункты самовывоза</div>
+            </div>
+
+            <div class="pickup">
+
+                <div class="addresses__1">
+                    <div class="addresses_info_1">г. Москва, м Текстильщики, 8-я улица Текстильщиков, д. 10</div>
+                    <div class="addresses_time_1">Ежедневно 08:00-22:00</div>
+                </div>
+                <div class="addresses__2">
+                    <div class="addresses_info_2">поселок ВНИИССОК (Московская область), улица Дениса Давыдова, д. 10</div>
+                    <div class="addresses_time_2">Ежедневно 10:00-22:00</div>
+                </div>
+                <div class="addresses__3">
+                    <div class="addresses_info_3">г. Одинцово (Московская область), Можайское шоссе, д. 121</div>
+                    <div class="addresses_time_3">Ежедневно 08:00-22:00</div>
+                </div>
+
+                <img class = "pickup__scroll" width="7" height="75" src="./images/pickup_scroll.png" alt="3">
+                <div class = "pickup_map"></div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал-->
+    <footer>
+
+        <div class="footer__elem">
+            <div class="footer__elem__title">ПОКУПАТЕЛЯМ</div>
+            <div class="footer__elem__info">
+                Доставка <br>Возврат  <br>Вопросы и ответы  <br>Отзывы  <br>
+            </div>
+        </div>
+        <div class="footer__elem">
+            <div class="footer__elem__title">О КОМПАНИИ</div>
+            <div class="footer__elem__info">
+                Пресса о нас  <br>Контакты  <br>
+            </div>
+        </div>
+        <div class="footer__elem">
+            <div class="footer__elem__title">НОВОСТИ</div>
+            <div class="footer__elem__mail"><input type="email" id="email" placeholder="ivanov@mail.ru" pattern="^([^ ]+@[a-z0-9.-]+[^ ])$" required></div> 
+            <div class="footer__elem__politics">Подписываясь на рассылку, вы соглашаетесь с условиями <u>Политики конфиденциальности</u></div> 
+            <div class="footer__elem__bott1">БОЛЬШОЙ САВВИНСКИЙ ПЕРЕУЛОК, 12С18, МОСКВА</div>
+            <div class="footer__elem__bott2">
+                <img class="footer__elem__logo" width="20" height="20" src="./images/logo.png" alt="logo">
+                FLOAP © 2022</div>
+        </div>
+    </footer> 
+</body>
+
+<script src="./scripts/script.js"></script>
+</html>
