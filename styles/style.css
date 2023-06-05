@@ -1,0 +1,684 @@
+@charset "UTF-8";
+/*Подключение шрифтов из папки fonts*/
+@import url("../fonts/Inter/Inter.css");
+/*По аналогии можно подключить и другие шрифты*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font: 400 24px "inter", sans-serif;
+}
+
+header, footer {
+  background-color: #222;
+  min-height: 100px;
+  padding-bottom: 5px;
+}
+
+main {
+  padding-top: 35px;
+  background-color: #000;
+  min-height: 100px;
+  padding-bottom: 20px;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/*все блоки-карточки на расстоянии 30px в main*/
+main .content > div {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 855px) {
+  .content {
+    max-width: 400px;
+  }
+  header {
+    min-height: 86px;
+  }
+}
+/*------------------ ЗАГОЛОВОК -------------------*/
+nav {
+  display: grid;
+  grid-template-areas: "logr name name name name search" "logo name name name name login" "logo hnav hnav hnav hnav hnav";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+}
+nav:hover .nav_item_5 {
+  font-weight: normal;
+}
+nav [class^=nav_item_]:hover {
+  font-weight: bold;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+nav .nav_toggle {
+  display: none;
+}
+nav .nav_label {
+  grid-area: logo;
+  align-items: end;
+  padding-right: 5px;
+}
+nav .nav_burger {
+  margin-right: 10px;
+}
+nav .nav_item_1:hover {
+  cursor: pointer;
+}
+nav .nav_item_5 {
+  font-weight: bold;
+}
+nav .hidd_nav {
+  grid-area: hnav;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-right: 60px;
+  margin-left: 20px;
+}
+nav .nav_item_7 {
+  grid-area: name;
+  font-size: 40px;
+  color: #E30E6A;
+  font-weight: 700;
+}
+nav .nav_item_8 {
+  grid-area: search;
+  font-size: 18px;
+  position: relative;
+}
+nav .nav_item_8::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -25px;
+  background-image: url("../images/nav_search.png");
+}
+nav .nav_item_9 {
+  grid-area: login;
+  font-size: 18px;
+  position: relative;
+}
+nav .nav_item_9::before {
+  content: "";
+  width: 25px;
+  height: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -32px;
+  background-image: url("../images/nav_login.png");
+}
+
+@media screen and (max-width: 855px) {
+  header {
+    min-height: 87px;
+  }
+  nav {
+    display: grid;
+    grid-template-areas: "logr namee" "logo namee";
+    grid-template-columns: 1fr 6fr 0;
+    font-size: 22px;
+    position: absolute;
+    align-items: center;
+    overflow: hidden;
+  }
+  nav:hover .nav_item_5 {
+    font-weight: bold;
+  }
+  nav .nav_toggle:checked ~ .hidd_nav {
+    left: 0%;
+  }
+  nav .nav_item_1 {
+    grid-area: logo;
+    max-width: 79px;
+    height: 86px;
+    z-index: 2;
+  }
+  nav .nav_item_1:hover {
+    cursor: pointer;
+    background-color: #1c1b1b;
+    border-radius: 20px;
+  }
+  nav .nav_item_7 {
+    grid-area: namee;
+    margin-left: 0.5rem;
+  }
+  nav .nav_item_8, nav .nav_item_9 {
+    display: none;
+  }
+  nav .hidd_nav {
+    position: relative;
+    border-radius: 20px;
+    left: 110%;
+    background-color: rgba(34, 34, 34, 0.8549019608);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: left 0.5s;
+  }
+  nav .hidd_nav:hover .nav_item_5 {
+    font-weight: normal;
+  }
+  nav .hidd_nav > *:hover {
+    font-weight: bold !important;
+  }
+  nav .hidd_nav > *:active {
+    color: #E30E6A;
+  }
+  nav .hidd_nav .nav_item_5 {
+    width: 126.5px;
+  }
+}
+/*-------------------------MAIN---------------------------*/
+/*-------Карточка 1 - преимущества----------*/
+.advantages {
+  display: block;
+  border-radius: 10px;
+  background-image: url("../images/gradientbg.png");
+  background-size: cover;
+  padding-left: 100px;
+  padding-top: 50px;
+  min-height: 474px;
+  color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* быстрая доставка по всей россии */
+.advantages__item_1 {
+  font-size: 50px;
+  line-height: 70px;
+  padding-bottom: 20px;
+}
+
+/*преимущества - flex элементы*/
+adv_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  line-height: 70px;
+  font-size: 30px;
+}
+
+adv_items > div {
+  position: relative;
+  padding-left: 50px;
+}
+
+/*значки у преимуществ*/
+adv_items > ::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/*загрузка значков у преимушеств*/
+.advantages__item_2::before {
+  background-image: url("../images/adv_symbol2.png");
+}
+
+.advantages__item_3::before {
+  background-image: url("../images/adv_symbol3.png");
+}
+
+.advantages__item_4::before {
+  background-image: url("../images/adv_symbol4.png");
+}
+
+/*-----------------------------------------*/
+/*------ Карточка 2 - заказ доставки ------*/
+.delivery {
+  background-color: #F9F9F9;
+  border-radius: 10px;
+  padding: 50px 25px;
+  height: 800px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/*как заказать доставку товара?*/
+.delivery__item_1 {
+  color: #E30E6A;
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 auto 25px auto;
+  text-align: center;
+  line-height: 60px;
+  justify-content: center;
+  gap: 10px;
+  width: 625px;
+  font-size: 30px;
+  position: relative;
+  padding-left: 50px;
+  /*значок сумки*/
+}
+.delivery__item_1::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background-image: url("../images/del_step.png");
+}
+
+/*главный блок с шагами*/
+del_steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/*прижимание к праву/леву*/
+.delivery_step_1, .delivery_step_3, .delivery_step_3_ {
+  align-self: start;
+}
+
+.delivery_step_3 {
+  position: relative;
+  top: -200px;
+}
+
+.delivery_step_2, .delivery_step_2_ {
+  align-self: end;
+  position: relative;
+  top: -100px;
+  /*top: -10vw;*/
+  /*top: -5vw;*/
+}
+
+/*набор шага: {номер+текст}*/
+del_steps > div {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+/*текст шага*/
+del_steps > div > div {
+  background-color: white;
+  border-radius: 10px;
+  width: 330px;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  margin: 16px 32px;
+  padding: 16px 24px;
+  gap: 10px;
+}
+
+/*блок с компаниями*/
+del_steps > .delivery_step_2_ {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  left: -63px;
+  top: -135px;
+}
+
+/*блок с машинкой*/
+del_steps > .delivery_step_3_ {
+  position: relative;
+  top: -216px;
+  left: 87px;
+  width: 310px;
+  height: 62px;
+  padding: 16px 0px;
+  background-image: url("../images/del_car.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*текс компаний доставки*/
+[class^=del__comp_] {
+  font-size: 22px;
+  line-height: 24px;
+  margin: 4px 8px;
+  padding: 14px 24px;
+  width: 310px;
+  position: relative;
+  padding-left: 50px;
+}
+
+/*пвсеводоэлементы-значки компаний*/
+.delivery_step_2_ > div::before {
+  content: "";
+  height: 35px;
+  width: 35px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+} /*вставка значков компаний*/
+.del__comp_1::before {
+  background-image: url("../images/del_comp1.png");
+}
+
+.del__comp_2::before {
+  background-image: url("../images/del_comp2.png");
+}
+
+.del__comp_3::before {
+  background-image: url("../images/del_comp3.png");
+}
+
+/*-----------------------------------------*/
+/*---- Карточка 3 - пункты самовывоза -----*/
+/*Название - пункты самовывоза*/
+.pickup_title {
+  background-color: white;
+  border-radius: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/*Блок целиком - таблица*/
+.pickup {
+  background-color: #F9F9F9;
+  border-radius: 20px;
+  min-height: 388px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 371px 14px auto;
+  grid-template-areas: "address1 scr pickup_img" "address2 scr pickup_img" "address3 scr pickup_img";
+  justify-items: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+/*Адреса: {Адрес + время работы}*/
+[class^=addresses__] {
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 361px;
+  height: 105px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Изменение цвета при наведении*/
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+[class^=addresses_info_] {
+  font-size: 17px;
+}
+
+[class^=addresses_time_] {
+  font-size: 16px;
+  color: #A99D9D;
+  justify-self: flex-end;
+}
+
+/*Изменение цвета при наведении*/
+[class^=addresses__]:hover {
+  background-color: #ea619c;
+  /*#e6458b*/
+  color: white;
+}
+
+[class^=addresses__]:hover > div {
+  color: white;
+}
+
+.addresses__1 {
+  margin-top: 10px;
+  grid-area: address1;
+}
+
+.addresses__2 {
+  grid-area: address2;
+}
+
+.addresses__3 {
+  grid-area: address3;
+  margin-bottom: 10px;
+}
+
+/*Scroll-элемент*/
+.pickup .pickup__scroll {
+  grid-area: scr;
+  align-self: flex-start;
+  margin-top: 30px;
+}
+
+/*Карта*/
+.pickup_map {
+  grid-area: pickup_img;
+  width: 100%;
+  height: 388px;
+  background-image: url("../images/pickup_map.png");
+  background-size: cover;
+}
+
+/*-----------------------------------------*/
+@media screen and (max-width: 855px) {
+  /*-------Карточка 1 - преимущества----------*/
+  .advantages {
+    padding-left: 40px;
+    padding-top: 40px;
+    background-size: 400px 434px;
+    min-height: 434px;
+  }
+  /* быстрая доставка по всей россии */
+  .advantages__item_1 {
+    font-size: 35px;
+    line-height: 55px;
+    padding-bottom: 30px;
+  }
+  /*преимущества - flex элементы*/
+  adv_items {
+    line-height: 65px;
+    font-size: 25px;
+  }
+  /*-----------------------------------------*/
+  /*------ Карточка 2 - заказ доставки ------*/
+  .delivery {
+    padding: 40px 25px;
+    height: 857px;
+  }
+  /*как заказать доставку товара?*/
+  .delivery__item_1 {
+    max-width: 325px;
+    font-size: 27px;
+    line-height: 40px;
+  }
+  /*набор шага: {номер+текст}*/
+  del_steps > div {
+    padding: 8px;
+  }
+  /*текст шага*/
+  del_steps > div > div {
+    width: 285px;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 8px 16px;
+    padding: 16px;
+  }
+  /*выберите удобный способ*/
+  del_steps > .delivery_step_2 {
+    top: 0;
+  }
+  /*блок с компаниями*/ /*оформите заказ*/
+  del_steps > .delivery_step_2_, .delivery_step_3 {
+    top: -20px;
+  }
+  /*блок с машинкой*/
+  del_steps > .delivery_step_3_ {
+    display: none;
+  }
+  /*текс компаний доставки*/
+  [class^=del__comp_] {
+    font-size: 21px;
+    line-height: 23px;
+    padding: 14px 12px 14px 48px;
+    width: 250px;
+  }
+  /*-----------------------------------------*/
+  /*-----------------------------------------*/
+  /*---- Карточка 3 - пункты самовывоза -----*/
+  /*Название - пункты самовывоза*/
+  .pickup_title {
+    font-size: 27px;
+  }
+  /*Блок целиком - таблица*/
+  .pickup {
+    grid-template-columns: 380px 14px auto;
+    grid-template-areas: "address1 scr null " "address2 scr null " "pickup_img pickup_img pickup_img";
+    grid-row-gap: 10px;
+  }
+  /*3й адрес*/
+  .addresses__3 {
+    display: none;
+  }
+  /*Карта*/
+  .pickup_map {
+    height: 338px;
+    border-radius: 20px;
+  }
+  /*-----------------------------------------*/
+}
+/*-----------------------FOOTER----------------------------*/
+footer {
+  font-size: 12px;
+  line-height: 20px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 190px;
+  color: #F5F5F5;
+}
+
+.footer__elem {
+  position: relative;
+  min-height: 108px;
+  letter-spacing: 1px;
+}
+.footer__elem__title {
+  margin-bottom: 10px;
+}
+.footer__elem__mail {
+  font-size: 11px;
+  border: 1px solid #F5F5F5;
+  border-radius: 5px;
+  padding: 2px 4px;
+  position: relative;
+}
+.footer__elem__mail > * {
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: white;
+  width: 100%;
+}
+.footer__elem__mail::after {
+  content: "";
+  width: 30px;
+  height: 26px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%);
+  background-image: url("../images/footer_mail.png");
+}
+.footer__elem__mail::after:hover {
+  cursor: pointer !important;
+}
+.footer__elem__info:hover {
+  cursor: pointer;
+}
+.footer__elem__politics {
+  padding-top: 3px;
+  width: 180px;
+  font-size: 6px;
+  line-height: 6px;
+  margin-bottom: 40px;
+}
+.footer__elem__politics:hover {
+  cursor: pointer;
+}
+.footer__elem__bott1 {
+  font-size: 6px;
+  position: absolute;
+  right: -70px;
+  bottom: -10px;
+}
+.footer__elem__bott2 {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  position: absolute;
+  right: -70px;
+  bottom: -25px;
+}
+.footer__elem__logo {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    padding-top: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: flex-start;
+    height: 270px;
+  }
+  .footer__elem__bott1 {
+    line-height: 10px;
+    right: 0;
+  }
+  .footer__elem__bott2 {
+    right: 0;
+  }
+  .footer__elem__mail::after {
+    right: -1px;
+  }
+}
+@media screen and (max-width: 900px) {
+  del_steps > div {
+    padding: 16px 8px 16px 8px;
+  }
+}/*# sourceMappingURL=style.css.map */

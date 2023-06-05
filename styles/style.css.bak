@@ -1,0 +1,387 @@
+/*Подключение шрифтов из папки fonts*/
+@import url("../fonts/Inter/Inter.css");
+/*По аналогии можно подключить и другие шрифты*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font: 400 24px "inter", sans-serif;
+}
+
+header, footer{
+    background-color: #222;
+    min-height: 100px;
+    padding-bottom: 5px;
+}
+
+main{
+    padding-top: 35px;
+    background-color: #000;
+    min-height: 100px;
+    padding-bottom: 20px;
+}
+
+.content{
+    max-width: 900px;
+    margin: 0 auto;
+}
+/*все блоки-карточки на расстоянии 30px в main*/
+main .content > div{
+    margin-bottom: 30px;
+}
+
+/*------------------ ЗАГОЛОВОК -------------------*/
+nav{
+    display: grid;
+    grid-template-areas: 
+    "logr name name name name search"
+    "logo name name name name login"
+    "logo main cata redu send about";
+    justify-items: center;
+    align-items: center;
+    font-size: 22px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+nav .nav_item_1{
+    grid-area: logo;
+    align-items: end;
+}
+.nav_item_2{
+    grid-area: main;
+}
+.nav_item_3{
+    grid-area: cata;
+}
+.nav_item_4{
+    grid-area: redu;
+}
+.nav_item_5{
+    grid-area: send;
+}
+.nav_item_6{
+    grid-area: about;
+}
+nav .nav_item_7{
+    grid-area: name;
+    font-size: 40px;
+    color: #E30E6A;
+    font-weight: 700;
+}
+nav .nav_item_8{
+    grid-area: search;
+    font-size: 18px;
+}
+nav .nav_item_9{
+    grid-area: login;
+    font-size: 18px;
+}
+/*--------------------------------------------------------*/
+
+
+/*-------------------------MAIN---------------------------*/
+
+/*-------Карточка 1 - преимущества----------*/
+.advantages{
+    display: block;
+    border-radius: 10px;
+    background-image: url("../images/gradientbg.png");
+    background-size: cover;
+    padding-left: 100px;
+    padding-top: 50px;
+    min-height: 474px;
+
+    color:white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+/* быстрая доставка по всей россии */
+.advantages__item_1{
+    font-size: 50px;
+    line-height: 70px;
+    padding-bottom: 20px;
+}
+/*преимущества - flex элементы*/
+adv_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    line-height: 70px;
+    font-size: 30px;
+}
+adv_items > div{
+    position: relative;
+    padding-left: 50px;
+}
+/*значки у преимуществ*/
+adv_items > ::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+/*загрузка значков у преимушеств*/
+.advantages__item_2::before{
+    background-image: url("../images/adv_symbol2.png");
+}
+.advantages__item_3::before{
+    background-image: url("../images/adv_symbol3.png");
+}
+.advantages__item_4::before{
+    background-image: url("../images/adv_symbol4.png");
+}
+
+/*-----------------------------------------*/
+
+
+/*------ Карточка 2 - заказ доставки ------*/
+.delivery{
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    padding: 50px 25px;
+    height: 800px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+/*как заказать доставку товара?*/
+.delivery__item_1{
+    color:#E30E6A;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto 25px auto;
+    text-align: center;
+    line-height: 60px;
+
+    justify-content: center;
+    gap: 10px;
+    width: 625px;
+    font-size: 30px;
+    
+    position: relative;
+    padding-left: 50px;
+}
+/*значок сумки*/
+.delivery__item_1::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-image: url("../images/del_step.png");
+}
+
+/*главный блок с шагами*/
+del_steps{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/*прижимание к праву/леву*/
+.delivery_step_1 , .delivery_step_3, .delivery_step_3_{
+    align-self: start;
+}
+.delivery_step_3{
+    position: relative;
+    top: -200px;
+}
+.delivery_step_2, .delivery_step_2_{
+    align-self: end;
+    position: relative;
+    top: -100px;
+    /*top: -10vw;*/
+    /*top: -5vw;*/
+}
+/*набор шага: {номер+текст}*/
+del_steps > div{
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+/*текст шага*/
+del_steps > div > div{
+    background-color: white;
+    border-radius: 10px;
+    width: 330px;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    margin: 16px 32px;
+    padding: 16px 24px;
+    gap: 10px;
+}
+/*блок с компаниями*/
+del_steps > .delivery_step_2_{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    left: -63px;
+    top: -135px;
+}
+/*блок с машинкой*/
+del_steps > .delivery_step_3_{
+    position: relative;
+    top: -216px;
+    left: 87px;
+    width: 310px;
+    height: 62px;
+    padding: 16px 0px;
+    background-image: url("../images/del_car.png");
+    background-size: contain;
+}
+/*текс компаний доставки*/
+[class ^= "del__comp_"]{
+    font-size: 22px;
+    line-height: 24px;
+    margin: 4px 8px;
+    padding: 14px 24px;
+    width: 310px;
+    position: relative;
+    padding-left: 50px;
+}
+/*пвсеводоэлементы-значки компаний*/
+.delivery_step_2_ > div::before{
+    content: "";
+    height: 35px;
+    width: 35px;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+}/*вставка значков компаний*/
+.del__comp_1::before{
+    background-image: url("../images/del_comp1.png");
+}
+.del__comp_2::before{
+    background-image: url("../images/del_comp2.png");
+}
+.del__comp_3::before{
+    background-image: url("../images/del_comp3.png");
+}
+
+
+/*-----------------------------------------*/
+
+/*---- Карточка 3 - пункты самовывоза -----*/
+
+/*Название - пункты самовывоза*/
+.pickup_title{
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+/*Блок целиком - таблица*/
+.pickup{
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    min-height: 388px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    display: grid;
+    grid-template-columns: 371px 14px auto;
+    grid-template-areas: 
+    "address1 scr pickup_img"
+    "address2 scr pickup_img"
+    "address3 scr pickup_img";
+    justify-items: center;
+    align-items: center;
+    font-size: 22px;
+}
+/*Адреса: {Адрес + время работы}*/
+[class ^= "addresses__"]{
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 361px;
+    height: 105px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*Изменение цвета при наведении*/
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+[class ^="addresses_info_"]{
+    font-size: 17px;
+    
+}
+[class ^="addresses_time_"]{
+    font-size: 16px;
+    color: #A99D9D;
+    justify-self: flex-end;
+}
+/*Изменение цвета при наведении*/
+[class ^="addresses__"]:hover{
+    background-color: #ea619c;
+    /*#e6458b*/
+    color: white;
+}
+[class ^="addresses__"]:hover > div{
+    color: white;
+}
+
+.addresses__1{
+    margin-top: 10px;
+    grid-area: address1;
+    
+}
+.addresses__2{
+    grid-area: address2;
+}
+.addresses__3{
+    grid-area: address3;
+    margin-bottom: 10px;
+}
+/*Scroll-элемент*/
+.pickup .pickup__scroll{
+    grid-area: scr;
+    align-self: flex-start;
+    margin-top: 30px;
+}
+/*Карта*/
+.pickup_map{
+    grid-area: pickup_img;
+    width: 100%;
+    height: 388px;
+    background-image: url("../images/pickup_map.png");
+    background-size: cover;
+}
+
+/*-----------------------------------------*/
+
+/*--------------------------------------------------------*/
+
+/*-----------------------FOOTER----------------------------*/
+
+footer{
+    font-size: 16px;
+    color: rgb(122, 117, 117);
+    display: flex;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+}
